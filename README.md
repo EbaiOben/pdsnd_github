@@ -76,6 +76,8 @@ The `bikeshare.py` file is set up as a script that takes in raw input to create 
 
 The answers to the questions above will determine the city and timeframe on which We'll do data analysis. After filtering the dataset, users will see the statistical result of the data, and choose to start again or exit.
 
+Before choosing to start again or exit, the script will reuests to display 5 rows of the raw data of the filtered dataset. The request is repeqted to display more rows in multiples of 5. 
+
 ### Files used
 The data files of the 3 cities used for the project are the following `.csv` files
 ```
