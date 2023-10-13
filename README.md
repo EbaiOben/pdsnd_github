@@ -1,4 +1,4 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
+>**Note**: Please **fork** the current repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine.
 
 ### Date created
 >Created on the 13th of October 2023
@@ -18,8 +18,8 @@ In this project, We will use data provided by [Motivate]((https://motivateco.com
 
 #### Software Needed
 To complete this project, the following software requirements apply:
-- `Python 3`, `NumPy`, and `pandas` installed using `Anaconda`
-- A text editor, like `Sublime` or `Atom`
+- `Python 3`, [`NumPy`](https://numpy.org/), and [`pandas`](https://pandas.pydata.org/) installed using `Anaconda`
+- A text editor, like []`Sublime`](https://www.sublimetext.com/) or [`Atom`](https://github.blog/2022-06-08-sunsetting-atom/)
 - A terminal application (Terminal on` Mac` and `Linux` or `Cygwin on Windows`).
 
 ### Installation of Software
