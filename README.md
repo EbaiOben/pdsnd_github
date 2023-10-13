@@ -1,5 +1,6 @@
 >**Note**: Please **fork** the current repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine.
 
+![Bikeshare](divvy.jpg)
 ### Date created
 >Created on the 13th of October 2023
 
