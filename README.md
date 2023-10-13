@@ -84,5 +84,8 @@ washington.csv
 ```
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+Our acknowledgements go to:
+ - **[Motivate]((https://motivateco.com/)), a bike share system provider for many major cities in the United State, from where our data was obatianed**
+ - **The entire Udacity Team for the amazing skills dished out**
+ - **Advanced Africa and Access Bank for the Scholarship Opportunity**
 
