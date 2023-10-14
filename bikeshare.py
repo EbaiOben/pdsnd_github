@@ -1,6 +1,6 @@
 import time
 import pandas as pd
-import numpy as np
+#import numpy as np
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -21,63 +21,63 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
-    city = input('\nWould you like to view data for chicago, new york city, or washington)?\n')
-    while city.lower() not in CITY_DATA.keys():
+    city = input('\nWould you like to view data for chicago, new york city, or washington?\n').lower()
+    while city not in CITY_DATA.keys():
         print("\nOops! looks like you entered an invalid city name")
-        city = input('Re-enter your city of choice: chicago, new york city, washington?\n')
+        city = input('Re-enter your city of choice: chicago, new york city, washington?\n').lower()
 
-    print("\nYou've chosen to explore data for {}\n".format(city.lower()))
-    data_filter = input("Would you like to filter the data just by month, day or both or none?\n")
+    print("\nYou've chosen to explore data for {}\n".format(city))
+    data_filter = input("Would you like to filter the data just by month, day or both or none?\n").lower().strip()
 
-    while data_filter.lower().strip() not in ['day', 'month', 'both', 'none']:
+    while data_filter not in ['day', 'month', 'both', 'none']:
         print("Invalid data filter option\n")
-        data_filter = input("Would you like to filter the data just by month, day or both or not at all(none)?\n")
+        data_filter = input("Would you like to filter the data just by month, day or both or not at all(none)?\n").lower().strip()
 
     #All data, no filtering
-    if data_filter.lower().strip() == 'none':
+    if data_filter == 'none':
         month = 'all'
         day = 'all'
 
     #filtering just for month
-    if data_filter.lower().strip() == 'month':
+    if data_filter == 'month':
         day = 'all'
         # TO DO: get user input for month (all, january, february, ... , june)
-        month = input('\nEnter a month of choice from: all, january, february, ... , june.\n')
+        month = input('\nEnter a month of choice from: all, january, february, ... , june.\n').lower().strip()
 
-        while month.lower().strip() not in MONTHS :
+        while month not in MONTHS :
             print("\nInvalid month option")
-            month = input('Re-enter your month of choice from: all, january, february, ... , june.\n')
+            month = input('Re-enter your month of choice from: all, january, february, ... , june.\n').lower().strip()
 
 
     #filtering just for weekday
-    if data_filter.lower().strip() == 'day':
+    if data_filter == 'day':
         month = 'all'
         # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-        day = input('\nEnter a week day of choice; all, monday, tuesday, ... sunday.\n')
+        day = input('\nEnter a week day of choice; all, monday, tuesday, ... sunday.\n').lower().strip()
 
-        while data_filter.lower().strip() not in WEEKDAYS :
+        while day not in WEEKDAYS :
             print("\nInvalid weekday option ")
-            day = input('Re-enter your weekday of choice from: all, monday, tuesday, ... sunday.\n')
+            day = input('Re-enter your weekday of choice from: all, monday, tuesday, ... sunday.\n').lower().strip()
 
-    if data_filter.lower().strip() == 'both':
+    if data_filter == 'both':
         # TO DO: get user input for month (all, january, february, ... , june)
-        month = input('\nEnter a month of choice from: all, january, february, ... , june.\n')
+        month = input('\nEnter a month of choice from: all, january, february, ... , june.\n').lower().strip()
 
-        while  month.lower().strip() not in MONTHS :
+        while  month not in MONTHS :
             print("\nInvalid month option")
-            month = input('Re-enter your month of choice from: all, january, february, ... , june.\n')
+            month = input('Re-enter your month of choice from: all, january, february, ... , june.\n').lower().strip()
 
         # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
-        day = input('\nEnter a week day of choice; all, monday, tuesday, ... sunday.\n')
+        day = input('\nEnter a week day of choice; all, monday, tuesday, ... sunday.\n').lower().strip()
 
-        while  day.lower().strip() not in WEEKDAYS :
+        while  day not in WEEKDAYS :
             print("\nInvalid weekday option ")
-            day = input('Re-enter your weekday of choice from: all, monday, tuesday, ... sunday.\n')
+            day = input('Re-enter your weekday of choice from: all, monday, tuesday, ... sunday.\n').lower().strip()
 
-    print("\nExploring data of city: {} with a selected month option: {} and weekday: {}\n".format(city.lower(), month.lower(), day.lower()))
+    print("\nExploring data of city: {} with a selected month option: {} and weekday: {}\n".format(city, month, day))
 
     print('-'*40)
-    return city.lower(), month.lower(), day.lower()
+    return city, month, day
 
 
 def load_data(city, month, day):
@@ -212,10 +212,10 @@ def main():
         trip_duration_stats(df)
         user_stats(df, city)
 
-        raw_data = input('\n Would you like to view raw data?, Enter yes or no\n')
-        if raw_data.lower().strip() != 'yes':
-            restart = input('\nWould you like to restart? Enter yes or no.\n')
-            if restart.lower().strip() != 'yes':
+        raw_data = input('\n Would you like to view raw data?, Enter yes or no\n').lower().strip()
+        if raw_data != 'yes':
+            restart = input('\nWould you like to restart? Enter yes or no.\n').lower().strip()
+            if restart != 'yes':
                 break
             else:
                 main()
@@ -225,25 +225,25 @@ def main():
             row_range = 5
             pd.set_option('display.max_columns', 10)
             print("\n Displaying raw data\n", df.head(row_range))
-            more_data = input('\nWould you like to view more data rows? Enter yes or no\n')
+            more_data = input('\nWould you like to view more data rows? Enter yes or no\n').lower().strip()
 
-            if more_data.lower().strip() != 'yes':
-                restart = input('\nWould you like to restart? Enter yes or no.\n')
-                if restart.lower().strip() != 'yes':
+            if more_data != 'yes':
+                restart = input('\nWould you like to restart? Enter yes or no.\n').lower().strip()
+                if restart != 'yes':
                     break
                 else:
                     main()
 
             else:
-                while more_data.lower().strip() == 'yes':
+                while more_data == 'yes':
                     count += 1
                     pd.set_option('display.max_columns', 10)
                     print("\n Displaying more raw data rows \n", df.head(row_range*count))
-                    more_data = input('\n Would you like to view more data rows? Enter yes or no\n')
+                    more_data = input('\n Would you like to view more data rows? Enter yes or no\n').lower().strip()
 
-                    if more_data.lower().strip() != 'yes':
-                        restart = input('\nWould you like to restart? Enter yes or no.\n')
-                        if restart.lower().strip() != 'yes':
+                    if more_data != 'yes':
+                        restart = input('\nWould you like to restart? Enter yes or no.\n').lower().strip()
+                        if restart != 'yes':
                             break
                         else:
                             main()
