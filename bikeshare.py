@@ -55,7 +55,7 @@ def get_filters():
         # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
         day = input('\nEnter a week day of choice; all, monday, tuesday, ... sunday.\n').lower().strip()
 
-        while data_filter not in WEEKDAYS :
+        while day not in WEEKDAYS :
             print("\nInvalid weekday option ")
             day = input('Re-enter your weekday of choice from: all, monday, tuesday, ... sunday.\n').lower().strip()
 
