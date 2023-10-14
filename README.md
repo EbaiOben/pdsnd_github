@@ -20,7 +20,7 @@ In this project, We will use data provided by [Motivate]((https://motivateco.com
 #### Software Needed
 To complete this project, the following software requirements apply:
 - `Python 3`, [`NumPy`](https://numpy.org/), and [`pandas`](https://pandas.pydata.org/) installed using `Anaconda`
-- A text editor, like []`Sublime`](https://www.sublimetext.com/) or [`Atom`](https://github.blog/2022-06-08-sunsetting-atom/)
+- A text editor, like [`Sublime`](https://www.sublimetext.com/) or [`Atom`](https://github.blog/2022-06-08-sunsetting-atom/)
 - A terminal application (Terminal on` Mac` and `Linux` or `Cygwin on Windows`).
 
 ### Installation of Software
